@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const navItems = [
   { name: 'Home', path: '/' },
+  { name: 'Research', path: '/research' },
   { name: 'Team', path: '/team' },
   { name: 'About', path: '/about' },
 ];
@@ -13,7 +14,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -22,9 +23,13 @@ export default function Navbar() {
             className="flex items-center gap-2"
           >
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-3xl">🌿</span>
-              <span className="font-bold text-xl text-forest-800 hidden sm:block">
-                Plant Disease Detection
+              <img
+                src="/Minor Project Logo-Photoroom.png"
+                alt="PlantCare AI"
+                className="w-10 h-10 object-contain"
+              />
+              <span className="font-bold text-xl text-gray-900 hidden sm:block">
+                PlantCare AI
               </span>
             </Link>
           </motion.div>
@@ -39,7 +44,7 @@ export default function Navbar() {
               >
                 <Link
                   to={item.path}
-                  className="px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-forest-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors block"
+                  className="px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors block"
                 >
                   {item.name}
                 </Link>

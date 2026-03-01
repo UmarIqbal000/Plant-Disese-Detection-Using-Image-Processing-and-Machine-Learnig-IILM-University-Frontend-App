@@ -57,7 +57,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm"
+            className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm"
           >
             {error}
           </motion.div>
@@ -68,8 +68,10 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
         className={`
           relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-300
           ${isDragging
-            ? 'border-primary-500 bg-primary-50 scale-[1.02]'
-            : 'border-primary-300 bg-white/50 hover:border-primary-400 hover:bg-white/70'
+            ? 'border-green-500 bg-green-50 scale-[1.02]'
+            : selectedImage
+              ? 'border-green-200 bg-white'
+              : 'border-gray-200 bg-gray-50 hover:border-green-300 hover:bg-green-50/30'
           }
         `}
         onDragOver={handleDragOver}
@@ -95,7 +97,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
                 onImageSelect(null);
                 if (fileInputRef.current) fileInputRef.current.value = '';
               }}
-              className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md"
+              className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md hover:bg-red-600 transition-colors"
             >
               ×
             </motion.button>
@@ -105,8 +107,14 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
             animate={{ scale: isDragging ? 1.1 : 1 }}
             className="py-8"
           >
-            <div className="text-6xl mb-4">🌱</div>
-            <p className="text-forest-700 text-lg font-medium mb-2">
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-6xl mb-4"
+            >
+              🌿
+            </motion.div>
+            <p className="text-gray-700 text-lg font-medium mb-2">
               Drag and drop your plant image here
             </p>
             <p className="text-gray-500 text-sm mb-4">
@@ -132,7 +140,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
             htmlFor="file-upload"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block mt-4 px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg cursor-pointer shadow-md hover:bg-primary-700 transition-colors"
+            className="inline-block mt-4 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl cursor-pointer shadow-lg shadow-green-600/25 hover:bg-green-700 hover:shadow-xl transition-all duration-300"
           >
             Browse Files
           </motion.label>
@@ -154,7 +162,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
               px-8 py-4 text-lg font-bold rounded-xl shadow-lg transition-all
               ${isLoading
                 ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white'
+                : 'bg-green-600 hover:bg-green-700 text-white shadow-green-600/25 hover:shadow-green-600/40'
               }
             `}
           >
@@ -170,7 +178,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
                 Analyzing...
               </span>
             ) : (
-              '🔍 Predict Disease'
+              '🔍 Analyze Plant'
             )}
           </motion.button>
         </motion.div>
@@ -181,12 +189,12 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
           initial={{ opacity: 0, y: 30, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ type: 'spring', damping: 15 }}
-          className="mt-8 p-6 bg-white rounded-2xl shadow-xl border border-primary-100"
+          className="mt-8 p-6 bg-white rounded-2xl shadow-xl shadow-gray-100 border border-gray-100"
         >
-          <h3 className="text-xl font-bold text-forest-800 mb-2 text-center">
+          <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">
             Prediction Result
           </h3>
-          <p className="text-center text-2xl font-semibold text-primary-700">
+          <p className="text-center text-2xl font-semibold text-green-600">
             {prediction}
           </p>
         </motion.div>

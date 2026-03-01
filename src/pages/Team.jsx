@@ -7,38 +7,30 @@ const teamMembers = [
     role: 'Team Lead & ML Engineer',
     description: 'Led the development of the ML model and integrated it with the frontend interface.',
     icon: '👨‍💻',
-    linkedin: null,
-    github: null,
   },
   {
     name: 'Team Member 2',
     role: 'Frontend Developer',
     description: 'Built the responsive user interface with modern animations.',
     icon: '👨‍🎨',
-    linkedin: null,
-    github: null,
   },
   {
     name: 'Team Member 3',
     role: 'Data Scientist',
     description: 'Processed and prepared the dataset for model training.',
     icon: '👩‍🔬',
-    linkedin: null,
-    github: null,
   },
   {
     name: 'Team Member 4',
     role: 'Researcher',
     description: 'Conducted research on plant disease classification techniques.',
     icon: '📚',
-    linkedin: null,
-    github: null,
   },
 ];
 
 export default function Team() {
   return (
-    <div className="min-h-screen pt-16 py-20 px-4 bg-white/30">
+    <div className="min-h-screen pt-16 py-20 px-4 bg-gradient-to-b from-green-50/50 to-white">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +38,7 @@ export default function Team() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-forest-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Meet Our Team
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

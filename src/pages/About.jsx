@@ -43,7 +43,7 @@ const futureScope = [
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-16 py-20 px-4">
+    <div className="min-h-screen pt-16 py-20 px-4 bg-gradient-to-b from-green-50/50 to-white">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -52,7 +52,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-forest-800 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             About This Project
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -65,12 +65,12 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
             <span>📖</span> Project Introduction
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <p className="text-gray-700 leading-relaxed">
               This project aims to help farmers and agricultural experts quickly identify plant diseases through image analysis.
               By leveraging deep learning and computer vision techniques, our system can accurately classify various plant
@@ -84,12 +84,12 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
             <span>⚠️</span> Problem Statement
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <p className="text-gray-700 leading-relaxed">
               Plant diseases cause significant agricultural losses worldwide. Traditional disease identification methods
               require expert knowledge and are time-consuming. There is a need for an automated, accessible, and
@@ -103,12 +103,12 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
             <span>💡</span> Solution Overview
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <p className="text-gray-700 leading-relaxed">
               We developed a deep learning model trained on thousands of plant leaf images to automatically detect
               and classify plant diseases. The frontend interface provides an easy-to-use platform where users can
@@ -122,9 +122,9 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-6 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
             <span>🌟</span> Key Features
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -135,10 +135,10 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/60 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl p-4 shadow-lg shadow-gray-100 hover:shadow-xl transition-shadow"
               >
                 <div className="text-3xl mb-2">{feature.icon}</div>
-                <h4 className="font-bold text-forest-700 mb-1">{feature.title}</h4>
+                <h4 className="font-bold text-gray-900 mb-1">{feature.title}</h4>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </motion.div>
             ))}
@@ -150,12 +150,12 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-6 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
             <span>🛠️</span> Technology Stack
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <div className="flex flex-wrap justify-center gap-4">
               {techStack.map((tech, index) => (
                 <motion.span
@@ -165,7 +165,7 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-forest-700 font-medium cursor-default"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full shadow-sm text-gray-700 font-medium cursor-default"
                 >
                   <span>{tech.icon}</span> {tech.name}
                 </motion.span>
@@ -179,12 +179,12 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
             <span>🧠</span> Model Training Overview
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <p className="text-gray-700 leading-relaxed mb-4">
               The disease detection model was trained using a Convolutional Neural Network (CNN) architecture on a
               comprehensive dataset of plant leaf images. The model learns to identify visual patterns associated
@@ -206,10 +206,10 @@ export default function About() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h3 className="text-2xl font-bold text-forest-700 mb-4 flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
             <span>🚀</span> Future Scope
           </h3>
-          <div className="bg-white/60 rounded-2xl p-6 shadow-md">
+          <div className="bg-white rounded-2xl p-6 shadow-lg shadow-gray-100">
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {futureScope.map((item, index) => (
                 <motion.li
@@ -220,7 +220,7 @@ export default function About() {
                   transition={{ delay: index * 0.05 }}
                   className="flex items-center gap-2 text-gray-700"
                 >
-                  <span className="text-primary-500">▹</span> {item}
+                  <span className="text-green-600">▹</span> {item}
                 </motion.li>
               ))}
             </ul>
