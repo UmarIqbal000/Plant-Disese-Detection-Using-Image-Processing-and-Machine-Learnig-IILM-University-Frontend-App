@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create vite@latest . -- --template react)",
+      "Bash(npm create vite@latest frontend -- --template react)",
+      "Bash(npm init -y)",
+      "Bash(npm install)",
+      "Bash(npm run build)",
+      "Bash(npm run dev)",
+      "Bash(timeout 5)",
+      "Bash(npm install react-router-dom)",
+      "Bash(findstr /N \"min-h-screen\")"
+    ]
+  }
+}
