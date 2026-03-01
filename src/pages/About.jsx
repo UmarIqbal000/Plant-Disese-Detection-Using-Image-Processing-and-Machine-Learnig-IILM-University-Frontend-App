@@ -54,7 +54,7 @@ export default function About() {
           </motion.div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Plant Disease Detection using{' '}
-            <span className="text-green-600">AI & Deep Learning</span>
+            <span className="text-green-600">Image Processing & Machine Learning</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             An AI-powered plant disease detection system developed to assist in the early identification of plant health conditions using deep learning.
