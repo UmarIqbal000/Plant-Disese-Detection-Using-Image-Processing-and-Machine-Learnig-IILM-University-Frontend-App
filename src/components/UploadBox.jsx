@@ -66,7 +66,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
 
       <motion.div
         className={`
-          relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-300
+          relative border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-300 cursor-pointer
           ${isDragging
             ? 'border-green-500 bg-green-50 scale-[1.02]'
             : selectedImage
@@ -77,7 +77,8 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        whileHover={{ scale: 1.01 }}
+        onClick={() => !selectedImage && fileInputRef.current?.click()}
+        whileHover={!selectedImage ? { scale: 1.01 } : {}}
       >
         {selectedImage ? (
           <motion.div
@@ -115,7 +116,7 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
               🌿
             </motion.div>
             <p className="text-gray-700 text-lg font-medium mb-2">
-              Drag and drop your plant image here
+              Click or drag and drop your plant image here
             </p>
             <p className="text-gray-500 text-sm mb-4">
               or click to browse files
@@ -130,20 +131,31 @@ export default function UploadBox({ onImageSelect, selectedImage, onPredict, isL
           ref={fileInputRef}
           type="file"
           accept="image/jpeg,image/jpg,image/png,image/webp"
+          capture="environment"
           onChange={handleFileSelect}
           className="hidden"
           id="file-upload"
         />
 
         {!selectedImage && (
-          <motion.label
-            htmlFor="file-upload"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block mt-4 px-6 py-3 bg-green-600 text-white font-semibold rounded-xl cursor-pointer shadow-lg shadow-green-600/25 hover:bg-green-700 hover:shadow-xl transition-all duration-300"
-          >
-            Browse Files
-          </motion.label>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-4">
+            <motion.label
+              htmlFor="file-upload"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 py-3 bg-green-600 text-white font-semibold rounded-xl cursor-pointer shadow-lg shadow-green-600/25 hover:bg-green-700 hover:shadow-xl transition-all duration-300"
+            >
+              📁 Browse Files
+            </motion.label>
+            <motion.label
+              htmlFor="file-upload"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl cursor-pointer shadow-lg shadow-blue-600/25 hover:bg-blue-700 hover:shadow-xl transition-all duration-300"
+            >
+              📷 Take Photo
+            </motion.label>
+          </div>
         )}
       </motion.div>
 

@@ -122,14 +122,14 @@ export default function Home() {
               </h1>
 
               <p className="text-lg text-gray-600 mb-8 max-w-lg">
-                Upload a photo of your plant leaf and get instant AI-powered analysis to identify diseases and get treatment recommendations.
+                Upload a plant leaf image and receive an instant AI assessment to check if your plant is healthy or potentially diseased.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => document.getElementById('upload-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.location.href = '/#upload-section'}
                   className="px-8 py-4 bg-green-600 text-white font-semibold rounded-xl shadow-lg shadow-green-600/25 hover:shadow-xl hover:shadow-green-600/30 hover:bg-green-700 transition-all duration-300"
                 >
                   Upload Image

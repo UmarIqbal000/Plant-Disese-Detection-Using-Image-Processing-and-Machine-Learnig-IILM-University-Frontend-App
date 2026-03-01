@@ -9,7 +9,8 @@
       "Bash(npm run dev)",
       "Bash(timeout 5)",
       "Bash(npm install react-router-dom)",
-      "Bash(findstr /N \"min-h-screen\")"
+      "Bash(findstr /N \"min-h-screen\")",
+      "Bash(findstr /N \"Upload Image\" Home.jsx)"
     ]
   }
 }
